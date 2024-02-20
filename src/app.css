@@ -1,0 +1,159 @@
+body{
+display: flex;
+align-items: center;
+justify-content: center;
+ /* Establece la imagen de fondo */
+ background-image: url('https://images.unsplash.com/photo-1704884382421-f9f64d04f2d3?q=80&w=2071&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
+ /* Ajusta la repetición y posición de la imagen según tus preferencias */
+ background-repeat: no-repeat;
+ background-size: cover;
+ background-position: center center;
+ width: 100%;
+ height: 100vh;
+ margin: 0;
+ color: white;
+}
+
+
+.contain-central{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    align-content: center;
+    text-align: center;
+    flex-direction: column;
+    margin: 50px;
+    padding: 20px 30px 30px 30px;
+    height: 500px;
+    border: 2px solid white;
+    border-radius: 20px;
+    backdrop-filter: blur(5px);
+    align-items: center;
+
+}
+/*search*/
+.search-input{
+    background: #F9FBFC;
+    border-radius: 2px;
+    border: 2px solid #202329;
+    margin: 0;
+    height: 40px;
+    width: 240px;
+    font-weight: 600;
+    text-align: center;
+    font-size: 0.8rem;
+    box-shadow: 0px 5px 50px rgba(32,35,41,0.25);
+
+}
+.search-input::placeholder{
+    color: #a5a5a5;
+    font-weight: 400;
+}
+.search-input:hover{
+    border:2px solid #61DAFA ;
+}
+.search-input:focus::placeholder{
+    color: black;
+}
+/*title*/
+
+.counter-title{
+    font-size: 24px;
+    font-weight: normal;
+    text-align: center;
+    margin: 0;
+    padding: 35px;
+}
+.counter-title span{
+    font-weight: bold;
+}
+/*tareas*/
+.list-contain{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin:24px 0 0 0;
+    padding: 0;
+    width: 400px;
+}
+.list-contain .list-contain-order{
+    list-style: none;
+    width: 100%;
+}
+.todoItem{
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    text-align: center;
+    align-items: center;
+    border: 1px solid white;
+    border-radius: 14px;
+    margin-top: 6px;
+    height: 50px;
+    position: relative;
+
+}
+.todoItem:hover{
+    background-color: rgb(255, 255, 255,0.1);
+}
+.todoItem-p{
+    font-size: 18px;
+}
+.todoItem-p--complete{
+   text-decoration: line-through;
+}
+.icon{
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    right: 0;
+    width:20px ;
+    height: 20px;
+    border-radius: 10px;
+}
+.icon-check{
+    right: 20px;
+
+}
+.icon-delete{
+    left: 20px;
+    background-color: rgb(184, 2, 2);
+}
+ 
+.icon-check--active{
+    background-color: rgb(4, 151, 29);
+}
+
+
+/*Button*/
+
+.buttonToAdd{
+    height: 50px;
+    width: 50px;
+    position: fixed;
+    right: 10px;
+    bottom:10px ;
+    font-size: 50px;
+    font-weight: bold;
+
+
+
+    background-color: rgb(31, 173, 126);
+    color: white;
+    border: none;
+    
+     border-radius: 5px;
+     cursor: pointer;
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     transform: rotate(0);
+     transition: .3s ease;
+     
+}
+.buttonToAdd:hover{
+    transform: rotate(224deg);
+}
+
