@@ -1,0 +1,10 @@
+.counter-title{
+    font-size: 24px;
+    font-weight: normal;
+    text-align: center;
+    margin: 0;
+    padding: 35px;
+}
+.counter-title span{
+    font-weight: bold;
+}

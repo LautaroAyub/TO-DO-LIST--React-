@@ -1,0 +1,12 @@
+.list-contain{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin:24px 0 0 0;
+    padding: 0;
+    width: 400px;
+}
+.list-contain .list-contain-order{
+    list-style: none;
+    width: 100%;
+}

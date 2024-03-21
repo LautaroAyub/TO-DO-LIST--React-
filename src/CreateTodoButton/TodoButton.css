@@ -1,0 +1,28 @@
+.buttonToAdd{
+    height: 50px;
+    width: 50px;
+    position: fixed;
+    right: 10px;
+    bottom:10px ;
+    font-size: 50px;
+    font-weight: bold;
+
+
+
+    background-color: rgb(31, 173, 126);
+    color: white;
+    border: none;
+    
+     border-radius: 5px;
+     cursor: pointer;
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     transform: rotate(0);
+     transition: .3s ease;
+     z-index: 2;
+     
+}
+.buttonToAdd:hover{
+    transform: rotate(224deg);
+}
