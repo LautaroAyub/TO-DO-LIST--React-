@@ -9,10 +9,9 @@
 
 
 
-    background-color: rgb(31, 173, 126);
-    color: white;
+    background-color:var(--light-blue);
+    color: var(--white);
     border: none;
-    
      border-radius: 5px;
      cursor: pointer;
      display: flex;
