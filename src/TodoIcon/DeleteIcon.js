@@ -1,20 +1,13 @@
-      
-// import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-// import { faCircleXmark } from '@fortawesome/free-solid-svg-icons';
-// import { faCircleCheck } from '@fortawesome/free-solid-svg-icons';
-// import { icon } from '@fortawesome/fontawesome-svg-core';
-// icon={faCircleXmark}
 import { TodoIcon } from './';
-      
+import "../index.css"      
 function DeleteIcon({onDelete}){
+    const root= document.querySelector(":root")
+    const gray = getComputedStyle(root).getPropertyValue('--gray');
     return  (<TodoIcon 
         type="delete"
-        color="gray" 
-        className={`icon icon-delete  `}
+        color={gray}
+        className={`icon`}
         onClick={onDelete}
-        
-    
-
     />)
 }    
 export {DeleteIcon}

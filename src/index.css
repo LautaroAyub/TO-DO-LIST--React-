@@ -3,13 +3,15 @@
   --font-light:300;
   --font-bold:600;
   --font-style:italic;
-  --font-size-small:0.75rem;
-  --font-size-regular:1rem;
+  --font-size-small:0.85rem;
+  --font-size-regular:1.2rem;
   --font-size-large:2rem;
   /* --shadow-default:; */
   --white:#F9FBFC;
   --black:#202329;
   --gray:#a5a5a5;
+  /* --gray : rgb(142 157 145); */
+  --green: rgb(84 241 111);
   --light-blue:#61dafa;
 
   }

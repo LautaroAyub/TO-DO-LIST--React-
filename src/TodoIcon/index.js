@@ -1,19 +1,24 @@
 import React from "react";
-import { ReactComponent as DeleteSVG } from "./delete.svg";
-import { ReactComponent as CheckSVG } from "./check.svg";
 import "./TodoIcon.css"
+
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faCircleXmark } from '@fortawesome/free-regular-svg-icons';
+import { faCircleCheck } from '@fortawesome/free-regular-svg-icons';
 
 
 const iconTypes={
-    "check": (color)=><CheckSVG className="Icon-svg"
-    fill={color}/>,
-    "delete":(color)=><DeleteSVG className="Icon-svg"
-    fill={color}/>,
+    "check": (color)=><FontAwesomeIcon icon={faCircleCheck} className="icon "
+    style={{color: color}}
+   />
+    ,"delete":(color)=><FontAwesomeIcon icon={faCircleXmark} className="icon"
+    style={{color: color}}
+    />,
 }
+
 
 function TodoIcon ({type, color, onClick}){
     return ( 
-    <span className= {`Icon-container Icon-container-${type}`}
+    <span className= {`icon-container icon-container-${type}`}
     onClick={onClick}>
        {iconTypes[type](color)}
     </span>)

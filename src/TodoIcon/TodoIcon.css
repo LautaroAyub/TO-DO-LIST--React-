@@ -1,35 +1,47 @@
-.Icon-container{
+
+.icon-container{
     cursor: pointer;
     display: flex;
     justify-content: center;
     align-items: center;
     position: absolute;
     right: 0;
-    width:20px ;
-    height: 20px;
+    width:26px ;
+    height: 26px;
     border-radius: 10px;
+    margin: 0;
+    padding: 0;
 }
 
-.Icon-container-check{
+.icon-container-check{
     left: 20px;
 
 }
-.Icon-container-delete{
+.icon-container-delete{
     right: 15px;
-    top: -4px;
-    background-color: rgb(184, 2, 2);
+    top: 0px;
+ 
+}
+
+.icon{
+    width: 96%;
+    height: 96%;
+    border-radius: 10px;
+}
+.icon-container-check:hover{
+    background-color: rgba(4, 151, 29, .3)
+}
+
+.icon-container-delete .icon:hover{
+    background-color: rgba(151, 4, 4, .3)
 }
  
-.Icon-container-check--active{
+/* .icon-check--active{
     background-color: rgb(4, 151, 29);
 }
-.Icon-svg{
-    width: 24px;
-    height: 24px;
+.icon-container-delete:hover .icon{
+    background-color: rgb(4, 151, 29);
 }
-.Icon-container-delete:hover .Icon-svg{
-    fill: red;
-}
-.Icon-container-check:hover .Icon-svg{
-    fill: green;
-}
+.icon-container-check:hover .icon{
+    background-color: rgb(4, 151, 29);
+} */

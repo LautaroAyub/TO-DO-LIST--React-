@@ -1,17 +1,15 @@
 import React from 'react';
+import "./TodoIcon.css"
 import { TodoIcon } from './';
-// import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-// import { faCircleXmark } from '@fortawesome/free-solid-svg-icons';
-// import { faCircleCheck } from '@fortawesome/free-solid-svg-icons';
-{/* <FontAwesomeIcon icon={faCircleCheck} */}
-// import { icon } from '@fortawesome/fontawesome-svg-core';
 
 function CompleteIcon({completed,onComplete}){
+  const root = document.querySelector(":root")
+  const gray=getComputedStyle(root).getPropertyValue('--gray');
+  const green= getComputedStyle(root).getPropertyValue('--green');
     return  ( <TodoIcon 
         type="check"
-        color={completed? "gray" : "green"}
-        className={`icon icon-check  
-        ${completed && "icon-check--active"}`}
+        color={completed? green : gray }
+        className={`${completed && "icon-check--active"}`}
         onClick={onComplete}
     />)
 }

@@ -4,7 +4,6 @@ import { DeleteIcon } from '../TodoIcon/DeleteIcon.js';
 import "./TodoItem.css"
 
 function ToDoItem(props){
-
     return(
       <li className='todoItem'>
 
