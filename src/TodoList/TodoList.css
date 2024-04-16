@@ -1,12 +1,19 @@
-.list-contain{
-    display: flex;
-    justify-content: center;
+.list-contain {
     align-items: center;
-    margin:24px 0 0 0;
+    align-self: start;
+    display: flex;
+    grid-row: 3 / 4;
+    height: auto;
+    justify-content: center;
+    justify-self: center;
+    margin: 24px 0 0;
+    overflow-x: hidden;
+    overflow-y: auto;
     padding: 0;
     width: 400px;
 }
 .list-contain .list-contain-order{
     list-style: none;
     width: 100%;
+    padding: 5px;
 }

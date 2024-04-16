@@ -10,8 +10,8 @@ const {
 }= React.useContext(TodoContext)
 
     return (
-
-      total===0?
+      <div className="counter-container">
+      {total===0?
      <h1 className="counter-title">No tienes tareas pendientes</h1>
     :
     (
@@ -22,7 +22,9 @@ const {
         Has completado <span>{completed}</span> de <span>{total}</span> TODOS
       </h1>
      
-    )
+    )}
+    </div>
+  
       
       
     )

@@ -5,12 +5,13 @@ import "./TodoItem.css"
 
 function ToDoItem(props){
     return(
+      
       <li className='todoItem'>
 
        <DeleteIcon onDelete={props.onDelete} />
-
+       <div className='todo-text-container'>
         <p className={`todoItem-p ${props.completed && "todoItem-p--complete"}`}>{props.text}</p>
-  
+        </div>
         <CompleteIcon 
         completed={props.completed}
         onComplete={props.onComplete}
@@ -18,6 +19,8 @@ function ToDoItem(props){
 
 
       </li>
+      
     );
+
   }
   export {ToDoItem}

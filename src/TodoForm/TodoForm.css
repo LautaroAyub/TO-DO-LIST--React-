@@ -1,25 +1,24 @@
-.form-container{
-    cursor:default;
+.form-container {
+    align-items: center;
+    background-color: var(--white);
+    border: 2px solid var(--light-blue);
+    border-radius: 6px;
+    box-shadow: 0 5px 50px #ffffff40;
+    cursor: default;
+    display: flex;
+    flex-direction: column;
+    height: auto;
+    justify-content: space-around;
+    min-height: 300px;
     min-width: 400px;
     width: auto;
-    height: auto;
-    min-height: 300px;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    flex-direction: column;  
-    background-color: var(--white); 
-    border: var(--light-blue) 2px solid;
-    border-radius: 6px;
-    box-shadow: 0px 5px 50px rgba(255, 255, 255, 0.25);
-   }
+}
 .form-tittle{
     color: var(--black);
-    font-size: 24px;
+    font-size: var(--font-size-regular);
     text-align: center;
-    font-weight: normal;
+    font-weight: var(--font-regular);
     margin: 0;
-   
 }
 .form-input{
     resize: none;
@@ -30,12 +29,12 @@
     height: 70px;
     width: 90%;
     text-align: center;
-    font-size: var(--font-size-regular);
+    font-size: var(--font-size-small);
     box-shadow: 0px 5px 50px rgba(32,35,41,0.25);
 }
 .form-input::placeholder{
     color: var(--gray);
-    font-weight: 500;
+    font-weight: var(--font-regular);
 }
 
 .form-input:hover{
@@ -53,7 +52,7 @@
 }
 
 .form-button{
-
+    cursor: pointer;
     border-radius: 6px;
     width:90px;
     height: 50px;

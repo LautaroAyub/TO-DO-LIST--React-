@@ -17,6 +17,7 @@ function AppUi() {
     loading,
     error,
     searchedTodos,
+    totalTodos,
     completeTodo,
     deleteTodo,
     openModal,
@@ -39,7 +40,9 @@ function AppUi() {
 
           }
           {error && <TodosError />}
+          {(!loading && totalTodos===0) && <EmptyTodos type={"emptyTodo"}/>}
 
+{(!loading&& totalTodos>0 && searchedTodos.length === 0) && <EmptyTodos type={"emptySearch"}/>}
           {(!loading && searchedTodos.length === 0) && <EmptyTodos />}
           {searchedTodos.map(todo => (
             <ToDoItem
