@@ -21,7 +21,7 @@ La interfaz cuenta con un contador , un buscador y un Modal que te permite agreg
 
 \## 🌏 *Github Page*
 
- https://lautiayub.github.io/react--project/
+https://lautiayub.github.io/TODO-LIST--React-/
 
 \## 🛠️ **Abre y ejecuta el proyecto**
 
