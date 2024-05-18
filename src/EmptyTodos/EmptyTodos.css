@@ -1,0 +1,7 @@
+.text-contain{
+    width: 100%;
+    text-align:center ;
+}
+.text-contain p{
+font-size: var(--font-size-regular);
+}

@@ -46,13 +46,22 @@ function TodoProvider({children}){
 
        // localStorage.TODOS_V1.splice(text,text.length)
      }
+
      const addTodo=(text)=>{
-     const itemNew= {
-       text:text,
-       completed:false};
-    const  newTodos =[...todos]
-    newTodos.push(itemNew)
-    saveTodos(newTodos)
+      const existTodo=todos.find( todo=> todo.text ===text)
+    if(existTodo){
+      alert("Esa tarea ya existe, prueba con otra!")
+  }
+  else{
+    const itemNew= {
+      text:text,
+      completed:false};
+   const  newTodos =[...todos]
+   newTodos.push(itemNew)
+   saveTodos(newTodos)
+   setOpenModal(false)
+  }
+
      }
        return(
     <TodoContext.Provider value={{

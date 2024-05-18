@@ -11,7 +11,7 @@ function TodoForm() {
     const onSubmit = (event) => {
         event.preventDefault();
         addTodo(newTodoValue)
-        setOpenModal(false)
+       
     }
 
     const onCancel = (event) => {

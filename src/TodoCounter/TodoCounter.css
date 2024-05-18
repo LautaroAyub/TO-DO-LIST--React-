@@ -1,8 +1,11 @@
-.counter-container {
+
+.counter-container{
     display: flex;
-    margin-bottom: 10px;
-    max-height: 140px;
-}
+    overflow-wrap: break-word;
+     max-width: 280px;
+     align-self: center;
+     justify-self: center;
+    }
 .counter-title{
     font-size: var(--font-size-large);
     font-weight: var(--font-light);
@@ -14,4 +17,18 @@
 
 .counter-title span{
     font-weight: var(--font-bold);
+}
+
+@media (min-width:500px) {
+    .counter-container {
+        margin-bottom: 10px;
+        max-height: 140px;
+    }
+    .counter-title{
+        text-align: center;
+        margin: 0;
+        padding: 20px;
+
+    }
+
 }

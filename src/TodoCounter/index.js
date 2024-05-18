@@ -24,12 +24,10 @@ const {
      
     )}
     </div>
-  
-      
       
     )
-  
     
 }
 
-export {ToDoCounter} //exports nombrados para evitar errores con default
+export {ToDoCounter}
+
