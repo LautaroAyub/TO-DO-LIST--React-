@@ -16,6 +16,7 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "eject": "react-scripts eject",
+    "predeploy":"npm run build",
     "deploy": "gh-pages -d build",
     "postdeploy": "rm -rf build"
   },
@@ -36,7 +37,7 @@
       "last 1 safari version"
     ]
   },
-  "homepage": "/Users/lauti/Documents/programacion/TODO-LIST--React-/build",
+  "homepage": ".",
   "devDependencies": {
     "gh-pages": "^6.1.1"
   }

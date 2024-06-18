@@ -20,19 +20,15 @@ function useLocalStorage(itemName, initialValue) {
           setItem(parsedItem)
         }
         setLoading(false)
-
       }
+      
       catch (error) {
         setLoading(false)
         setError(true);
-
       }
-    }, 2000)
+    }, )
   }, []
   )
-  console.log(item, "items")
-
-
   const saveItem = (newItem) => {
     localStorage.setItem(itemName, JSON.stringify(newItem))
     setItem(newItem)
@@ -48,12 +44,12 @@ function useLocalStorage(itemName, initialValue) {
 }
 export { useLocalStorage }
 
-localStorage.removeItem("TODOS_V1")
-const defaultTodos=[
-  {text:"Ordenar la ropa", completed:false},
-  {text:"Pasear al perro", completed:false},
-  {text:"Ir a entrenar", completed:false},
-  {text:"Pagar tarjeta", completed:false},
-]
+// localStorage.removeItem("TODOS_V1")
+// const defaultTodos=[
+//   {text:"Ordenar la ropa", completed:false},
+//   {text:"Pasear al perro", completed:false},
+//   {text:"Ir a entrenar", completed:false},
+//   {text:"Pagar tarjeta", completed:false},
+// ]
 
-localStorage.setItem("TODOS_V1",JSON.stringify(defaultTodos))
+// localStorage.setItem("TODOS_V1",JSON.stringify(defaultTodos))

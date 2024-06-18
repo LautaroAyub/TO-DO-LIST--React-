@@ -1,10 +1,7 @@
-import { TodoContext } from "../TodoContext"
 import "./TodoForm.css"
 import React from "react"
-function TodoForm() {
-    const {
-        addTodo,
-        setOpenModal, } = React.useContext(TodoContext)
+function TodoForm({addTodo, setOpenModal}) {
+
 
     const [newTodoValue, setNewTodoValue] = React.useState('');
 
