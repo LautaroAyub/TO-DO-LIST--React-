@@ -1,6 +1,6 @@
 .search-input{
     background:var(--white);
-    border-radius: 2px;
+    border-radius: 5px;
     border: 2px solid var(--black);
     margin: 0;
     height: 40px;
@@ -25,4 +25,7 @@
 }
 .search-input:focus::placeholder{
     color: var(--black);
+}
+.search-input:disabled{
+    opacity: 40%;
 }

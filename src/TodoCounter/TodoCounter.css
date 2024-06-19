@@ -18,6 +18,9 @@
 .counter-title span{
     font-weight: var(--font-bold);
 }
+.counter-container--loading{
+    opacity: 40%;
+}
 
 @media (min-width:500px) {
     .counter-container {

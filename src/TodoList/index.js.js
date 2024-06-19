@@ -1,11 +1,31 @@
 import "./TodoList.css"
-function ToDoList({children}){
-    return(
-        <ul className="list-contain">
-            <li className="list-contain-order">
-                {children}
-            </li>
-        </ul>
+function ToDoList({ error,
+    loading,
+    totalTodos,
+    searchedTodos,
+    onError,
+    onLoading,
+    onEmptyTodo,
+    onEmptySearch,
+    renderTodos }) {
+    return (
+        <section>
+
+            {error && onError()}
+
+            {loading && onLoading()}
+
+            {(!loading && totalTodos === 0) && onEmptyTodo()}
+
+            {(!loading && totalTodos > 0 && searchedTodos?.length === 0)&& onEmptySearch()}
+
+            <ul className="list-contain">
+
+                <li className="list-contain-order">
+                    {renderTodos()}
+                </li>
+            </ul>
+        </section>
     )
 }
-export {ToDoList}
+export { ToDoList }

@@ -1,5 +1,4 @@
-import React from'react'
-import "./app.css"
+import React from 'react'
 import { ToDoCounter } from '../TodoCounter/index.js';
 import { ToDoSearch } from '../TodoSearch/index.js';
 import { ToDoList } from '../TodoList/index.js.js';
@@ -11,6 +10,7 @@ import { EmptyTodos } from "../EmptyTodos"
 import { useTodos } from './useTodos.js';
 import { TodoForm } from '../TodoForm/index.js';
 import { Modal } from "../Modal"
+import TodoHeader from '../TodoHeader/index.js';
 
 function App() {
   const {
@@ -26,31 +26,26 @@ function App() {
     searchValue,
     setSearchValue,
     addTodo,
-   } = useTodos()
+  } = useTodos()
   return (
-    <>
-    <div className='contain-central'>
+    <TodoHeader>
+      <ToDoCounter totalTodos={totalTodos} completedTodos={completedTodos}
+        loading={loading} />
+      <ToDoSearch
+        searchValue={searchValue}
+        setSearchValue={setSearchValue}
+        loading={loading} />
 
-      <ToDoCounter totalTodos={totalTodos} completedTodos={completedTodos} />
-      <ToDoSearch searchValue={searchValue} setSearchValue={setSearchValue} />
-
-      <ToDoList>
-        {loading && (
-          <>
-            <TodosLoading />
-            <TodosLoading />
-            <TodosLoading />
-          </>
-        )
-
-        }
-        {error && <TodosError />}
-
-        {(!loading && totalTodos === 0) && <EmptyTodos type={"emptyTodo"} />}
-
-        {(!loading && totalTodos > 0 && searchedTodos.length === 0) && <EmptyTodos type={"emptySearch"} />}
-
-        {searchedTodos.map(todo => (
+      <ToDoList
+        error={error}
+        loading={loading}
+        totalTodos={totalTodos}
+        searchedTodos={searchedTodos}
+        onError={() => <TodosError />}
+        onLoading={() => <TodosLoading />}
+        onEmptyTodo={() => <EmptyTodos type={"emptyTodo"} />}
+        onEmptySearch={() => <EmptyTodos type={"emptySearch"} />}
+        renderTodos={() => searchedTodos.map(todo => (
           <ToDoItem
             key={todo.text}
             text={todo.text}
@@ -58,20 +53,15 @@ function App() {
             onComplete={() => completeTodo(todo.text)}
             onDelete={() => deleteTodo(todo.text)}
           />))}
-      </ToDoList>
-
+      />
       {openModal && (
         <Modal setOpenModal={setOpenModal}>
-          <TodoForm  addTodo={addTodo} setOpenModal={setOpenModal} />
+          <TodoForm addTodo={addTodo} setOpenModal={setOpenModal} />
         </Modal>)
       }
 
-      <CreateToDoButton openModal={openModal} setOpenModal={setOpenModal}/>
-    </div>
-  </>
+      <CreateToDoButton openModal={openModal} setOpenModal={setOpenModal} />
+    </TodoHeader>
   );
-  }
+}
 export default App;
-
-
-//  todo provider es la forma en la que le entrego todas las propeides que necesito para los componentes hijos de ella

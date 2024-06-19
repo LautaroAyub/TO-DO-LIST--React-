@@ -2,7 +2,7 @@ import React from "react"
 import "./TodoSearch.css"
 
 function ToDoSearch({ searchValue,
-    setSearchValue}){
+    setSearchValue, loading}){
 
     return(
     <input placeholder="Busca Tareas" 
@@ -10,7 +10,8 @@ function ToDoSearch({ searchValue,
     value={searchValue}
     onChange={(event)=>{
         setSearchValue(event.target.value)
-    }}/> 
+    }}
+    disabled={loading}/> 
     )
 }
 export {ToDoSearch}
