@@ -17,12 +17,14 @@ function ToDoList({ error,
 
             {(!loading && totalTodos === 0) && onEmptyTodo()}
 
-            {(!loading && totalTodos > 0 && searchedTodos?.length === 0)&& onEmptySearch()}
+            {((!loading && !error)  && totalTodos > 0 && searchedTodos?.length === 0)&& onEmptySearch()}
 
             <ul className="list-contain">
 
                 <li className="list-contain-order">
-                    {renderTodos()}
+                    {!loading &&
+                     renderTodos()
+                    }
                 </li>
             </ul>
         </section>
