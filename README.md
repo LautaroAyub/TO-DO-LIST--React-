@@ -17,7 +17,7 @@ La interfaz es responsiva y cuenta con varias funcionalidades como un contador, 
 - `Buscar Notas`: Funcionalidad de búsqueda para encontrar tareas específicas.
 
 ## 🌏 *Github Page*
-Puedes ver el proyecto en acción <a href=" https://lautaroayub.github.io/TODO-LIST--React-/">aquí</a>.
+Puedes ver el proyecto en acción <a href="https://lautaroayub.github.io/TODO-LIST--React-/">aquí</a>.
 
 
 ## 🛠️ **Cómo ejecutar el proyecto**
