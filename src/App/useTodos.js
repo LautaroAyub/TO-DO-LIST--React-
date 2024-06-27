@@ -1,7 +1,7 @@
 import React from "react";
 import { useLocalStorage } from "./useLocalStorage";
 
-function useTodos() {
+function useToDos() {
   const {
     item: todos,
     saveItem: saveTodos,
@@ -26,16 +26,13 @@ function useTodos() {
     const todoIndex = newTodos.findIndex((todo) => todo.text === text)
     newTodos[todoIndex].completed = !newTodos[todoIndex].completed
     saveTodos(newTodos)
-    //  console.log("complete")
   }
 
   const deleteTodo = (text) => {
     const newTodos = [...todos];
     const todoIndex = newTodos.findIndex((todo) => todo.text === text)
-    newTodos.splice(todoIndex, 1)//esta funcionalidad recorta desde el index que indiques y cuantas unidades
+    newTodos.splice(todoIndex, 1)
     saveTodos(newTodos)
-
-    // localStorage.TODOS_V1.splice(text,text.length)
   }
 
   const addTodo = (text) => {
@@ -55,25 +52,28 @@ function useTodos() {
     }
 
   }
-
-  return (
-    {
-      loading,
-      synchronizeTodos,
-      error,
-      completedTodos,
-      totalTodos,
-      searchValue,
-      setSearchValue,
-      searchedTodos,
-      completeTodo,
-      deleteTodo,
-      openModal,
-      setOpenModal,
-      addTodo
+  const states={
+    loading,
+    error,
+    completedTodos,
+    totalTodos,
+    searchValue,
+    searchedTodos,
+    openModal,
+  }
+ const stateUpdaters={
+  synchronizeTodos,
+  setSearchValue,
+  completeTodo,
+  deleteTodo,
+  setOpenModal,
+  addTodo
+ }
+  return {
+      states,
+      stateUpdaters
     }
-  )
 
 }
 
-export { useTodos }
+export { useToDos }

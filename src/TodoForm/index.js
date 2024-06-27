@@ -17,9 +17,7 @@ function TodoForm({addTodo, setOpenModal}) {
         setOpenModal(false)
     }
     const onchange = (event) => {
-        setNewTodoValue(event.target.value)
-        // console.log(newTodoValue)
-    }
+        setNewTodoValue(event.target.value)}
     return (
         <form
             onSubmit={onSubmit}

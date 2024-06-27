@@ -1,33 +1,38 @@
 import React from 'react'
-import { ToDoCounter } from '../TodoCounter/index.js';
-import { ToDoSearch } from '../TodoSearch/index.js';
-import { ToDoList } from '../TodoList/index.js.js';
-import { ToDoItem } from '../TodoItem/index.js';
 import { CreateToDoButton } from '../CreateTodoButton/index.js';
-import { TodosLoading } from "../TodosLoading"
-import { TodosError } from "../TodosError"
 import { EmptyTodos } from "../EmptyTodos"
-import { useTodos } from './useTodos.js';
-import { TodoForm } from '../TodoForm/index.js';
 import { Modal } from "../Modal"
-import TodoHeader from '../TodoHeader/index.js';
+import { ToDoCounter } from '../TodoCounter/index.js';
+import { TodoForm } from '../TodoForm/index.js';
+import { ToDoItem } from '../TodoItem/index.js';
+import { ToDoList } from '../TodoList/index.js.js';
+import { ToDoSearch } from '../TodoSearch/index.js';
+import { TodosError } from "../TodosError"
+import { TodosLoading } from "../TodosLoading"
+import { useToDos } from './useToDos.js';
 import ChangeAlertWithStorageListener from '../ChangeAlert/index.js';
+import TodoHeader from '../TodoHeader/index.js';
 function App() {
   const {
+    states,
+    stateUpdaters
+  } = useToDos();
+  const { 
     loading,
     error,
-    searchedTodos,
-    completeTodo,
-    deleteTodo,
-    openModal,
-    setOpenModal,
-    totalTodos,
     completedTodos,
+    totalTodos,
     searchValue,
-    setSearchValue,
-    addTodo,
-    synchronizeTodos,
-  } = useTodos()
+    searchedTodos,
+    openModal}=states;
+    const {
+      synchronizeTodos,
+      setSearchValue,
+      completeTodo,
+      deleteTodo,
+      setOpenModal,
+      addTodo
+    } =stateUpdaters;
   return (
     <TodoHeader>
       <ToDoCounter totalTodos={totalTodos} completedTodos={completedTodos}
