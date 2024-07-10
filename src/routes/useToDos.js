@@ -9,8 +9,9 @@ function useToDos() {
     loading,
     error
   } = useLocalStorage("TODOS_V1", [])
+
   const [searchValue, setSearchValue] = React.useState("")
-  const [openModal, setOpenModal] = React.useState(false)
+
   const completedTodos = todos.filter(todo => !!todo.completed).length;
   const totalTodos = todos.length;
 
@@ -21,37 +22,47 @@ function useToDos() {
 
     })
 
-  const completeTodo = (text) => {
+  const completeTodo = (id) => {
     const newTodos = [...todos];
-    const todoIndex = newTodos.findIndex((todo) => todo.text === text)
+    const todoIndex = newTodos.findIndex((todo) => todo.id === id)
     newTodos[todoIndex].completed = !newTodos[todoIndex].completed
     saveTodos(newTodos)
   }
-
-  const deleteTodo = (text) => {
-    const newTodos = [...todos];
-    const todoIndex = newTodos.findIndex((todo) => todo.text === text)
-    newTodos.splice(todoIndex, 1)
-    saveTodos(newTodos)
-  }
-
+  
   const addTodo = (text) => {
     const existTodo = todos.find(todo => todo.text === text)
+    const id= newTodoId(todos);
     if (existTodo) {
       alert("Esa tarea ya existe, prueba con otra!")
-    }
-    else {
+    }else {
       const itemNew = {
+         id:id,
         text: text,
         completed: false
       };
       const newTodos = [...todos]
       newTodos.push(itemNew)
       saveTodos(newTodos)
-      setOpenModal(false)
     }
-
   }
+  const getTodo=(id)=>{
+   return todos.find(todo => todo.id === id)
+  }
+
+  const editTodo = (id,newText) => {
+    const newTodos = [...todos];
+    const todoIndex = newTodos.findIndex((todo) => todo.id === id);
+    newTodos[todoIndex].text = newText;
+    saveTodos(newTodos)
+  }
+
+  const deleteTodo = (id) => {
+    const newTodos = [...todos];
+    const todoIndex = newTodos.findIndex((todo) => todo.id === id)
+    newTodos.splice(todoIndex, 1)
+    saveTodos(newTodos)
+  }
+
   const states={
     loading,
     error,
@@ -59,21 +70,29 @@ function useToDos() {
     totalTodos,
     searchValue,
     searchedTodos,
-    openModal,
+    getTodo
   }
  const stateUpdaters={
   synchronizeTodos,
   setSearchValue,
   completeTodo,
   deleteTodo,
-  setOpenModal,
-  addTodo
+  addTodo,
+  editTodo
  }
   return {
       states,
-      stateUpdaters
+      stateUpdaters,
     }
 
 }
 
+function newTodoId(TodoList){
+  if(!TodoList.length){
+    return 1
+  }
+  const idList=TodoList.map(todo=> todo.id);
+  const idMax=Math.max(...idList);
+  return idMax+1
+}
 export { useToDos }

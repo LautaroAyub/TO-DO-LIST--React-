@@ -1,11 +1,9 @@
 import React from "react";
 import "./TodoIcon.css"
-
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCircleXmark } from '@fortawesome/free-regular-svg-icons';
 import { faCircleCheck } from '@fortawesome/free-regular-svg-icons';
-
-
+import { faPenToSquare } from "@fortawesome/free-regular-svg-icons";
 const iconTypes={
     "check": (color)=><FontAwesomeIcon icon={faCircleCheck} className="icon "
     style={{color: color}}
@@ -13,12 +11,13 @@ const iconTypes={
     ,"delete":(color)=><FontAwesomeIcon icon={faCircleXmark} className="icon"
     style={{color: color}}
     />,
+    "edit":(color)=><FontAwesomeIcon icon={faPenToSquare} className="icon" style={{color:color}}/>
+
 }
-
-
 function TodoIcon ({type, color, onClick}){
     return ( 
-    <span className= {`icon-container icon-container-${type}`}
+    <span
+     className= {`icon-container icon-container-${type}`}
     onClick={onClick}>
        {iconTypes[type](color)}
     </span>)

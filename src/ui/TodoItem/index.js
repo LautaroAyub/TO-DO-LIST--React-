@@ -1,6 +1,7 @@
 
 import { CompleteIcon } from '../TodoIcon/CompleteIcon.js';
 import { DeleteIcon } from '../TodoIcon/DeleteIcon.js';
+import { EditIcon } from '../TodoIcon/EditIcon.js';
 import "./TodoItem.css"
 
 function ToDoItem(props){
@@ -16,10 +17,9 @@ function ToDoItem(props){
         completed={props.completed}
         onComplete={props.onComplete}
         />
-
-
-      </li>
-      
+      <EditIcon
+       onEdit={props.onEdit}/>
+      </li> 
     );
 
   }

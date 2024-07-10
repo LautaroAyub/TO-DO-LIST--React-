@@ -3,7 +3,6 @@ import "./TodoSearch.css"
 
 function ToDoSearch({ searchValue,
     setSearchValue, loading}){
-
     return(
     <input placeholder="Busca Tareas" 
     className="search-input"

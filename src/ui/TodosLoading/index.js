@@ -12,8 +12,6 @@ function TodosLoading(){
 
             </span>
         </div>
-    
     )
 }
-
 export {TodosLoading}
