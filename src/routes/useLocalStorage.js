@@ -41,7 +41,7 @@ const onSynchronize=(newItem)=>dispatch({
       catch (error) {
         onError(error)
       }
-    }, 500)
+    }, 100)
   }, [isSynchronizedItem])
 
   const saveItem = (newItem) => {
@@ -114,5 +114,3 @@ export { useLocalStorage }
 //   {text:"Ir a entrenar", completed:false},
 //   {text:"Pagar tarjeta", completed:false},
 // ]
-
-// localStorage.setItem("TODOS_V1",JSON.stringify(defaultTodos))

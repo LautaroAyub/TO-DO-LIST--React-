@@ -1,16 +1,15 @@
 import React from 'react';
-import "./TodoIcon.css"
 import { TodoIcon } from './';
 
-function CompleteIcon({completed,onComplete}){
+function EditIcon({onEdit}){
   const root = document.querySelector(":root")
   const gray=getComputedStyle(root).getPropertyValue('--gray');
   const green= getComputedStyle(root).getPropertyValue('--green');
     return  ( <TodoIcon 
-        type="check"
-        color={completed? green : gray }
-        className={`${completed && "icon-check--active"}`}
-        onClick={onComplete}
+        type="edit"
+        color={gray}
+        className={`icon-edit--active`}
+        onClick={onEdit}
     />)
 }
-export {CompleteIcon}
+export {EditIcon}

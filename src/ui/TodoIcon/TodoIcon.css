@@ -36,13 +36,13 @@
 .icon-container-delete .icon:hover{
     background-color: rgba(151, 4, 4, .3)
 }
+
+.icon-container-edit{
+    right: 0;
+    bottom: 0;
+}
  
-/* .icon-check--active{
-    background-color: rgb(4, 151, 29);
+.icon-container-edit:hover{
+    /* background-color: #b3dbe68e; */
+   transform: scale(1.1);
 }
-.icon-container-delete:hover .icon{
-    background-color: rgb(4, 151, 29);
-}
-.icon-container-check:hover .icon{
-    background-color: rgb(4, 151, 29);
-} */
