@@ -1,5 +1,4 @@
 import React from 'react'
-import { useLocation, useNavigate } from 'react-router-dom';
 import { CreateToDoButton } from "../../ui/CreateTodoButton";
 import { EmptyTodos } from "../../ui/EmptyTodos"
 import { ToDoCounter } from '../../ui/TodoCounter/index.js';
@@ -11,8 +10,10 @@ import { TodosLoading } from "../../ui/TodosLoading"
 import { useToDos } from '../useToDos.js';
 import ChangeAlertWithStorageListener from '../../ui/ChangeAlert/index.js';
 import TodoHeader from '../../ui/TodoHeader/index.js';
+import { useHistory } from 'react-router-dom';
+
 function HomePage() {
-    const navigate= useNavigate()
+    const history= useHistory();
   const {
     states,
     stateUpdaters
@@ -54,8 +55,9 @@ function HomePage() {
             key={todo.text}
             text={todo.text}
             completed={todo.completed}
-            onEdit={()=>navigate(`/edit/${todo.id}`,
-              {state:{toDo:todo}}
+            onEdit={()=>history.push(
+              {pathname:`/edit/${todo.id}`,
+              state:{toDo:todo}}
             )}
             onComplete={() => completeTodo(todo.id)}
             onDelete={() => deleteTodo(todo.id)}
@@ -63,7 +65,7 @@ function HomePage() {
           
       />
       <CreateToDoButton
-      onClick={()=>navigate("/new")}
+      onClick={()=>history.push({pathname:"/new"})}
       />
 
       <ChangeAlertWithStorageListener

@@ -1,19 +1,37 @@
 import React from 'react'
-import { HashRouter, Route, Routes } from 'react-router-dom';
 import { HomePage } from './home/HomePage';
 import { NewTodoPage } from './new/NewTodoPage';
 import { EditTodoPage } from './edit/EditTodo';
+import { HashRouter, Route, Switch } from "react-router-dom";
+
 
 function App() {
 
   return (
     <HashRouter>
-      <Routes>
-        <Route path='/' element={<HomePage />} />
-        <Route path='/new' element={<NewTodoPage />} />
-        <Route path='/edit/:id' element={<EditTodoPage />} />
-        <Route path='*' element={<p>Not Found</p>} />
-      </Routes>
+      <Switch>
+
+        <Route exact path='/'>
+          <HomePage />
+        </Route>
+
+        <Route exact path="/search/:slug?" >
+          <HomePage />
+        </Route >
+
+        <Route exact path='/new'>
+          <NewTodoPage />
+        </Route >
+
+        <Route exact path='/edit/:id' >
+          <EditTodoPage />
+        </Route >
+
+        <Route path='*' >
+          <p>Not Found</p>
+        </Route >
+
+      </Switch>
 
     </HashRouter>
   );
