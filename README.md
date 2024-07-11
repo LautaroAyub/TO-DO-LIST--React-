@@ -35,6 +35,7 @@ Puedes ver el proyecto en acción <a href="https://lautaroayub.github.io/TO-DO-L
 2. *master* => Rama principal con la versión 18 de React.
 3. *TEST-REACT-V17.0.2* => Rama con la adaptación de la app para usar la versión 17.0.2 de React.
 4. *react-router* => Rama en la que se realizó el test para el uso de navegacion con React Router Dom V6.24.1.
+5.  *react-router-v5* => Rama en la que se realizó el test para el uso de navegacion con React Router Dom V 5.3.4.(no se envió a producción)
 
 ## 👨‍💻 Tecnologías utilizadas
 React: Utilizado para construir la interfaz de usuario.<br>
