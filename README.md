@@ -17,6 +17,7 @@ La interfaz es responsiva, utiliza navegacion con React Router Dom y cuenta con 
 - `Buscar Tareas`: Funcionalidad de búsqueda para encontrar tareas específicas.
 - `Editar Tareas`: Funcionalidad para editar tareas ya creadas.
 - `Detector de cambios`: La APP detecta si cambios en otra pestaña.
+- `Compartir URL de busqueda`:El usuario puede compartir una URL de busqueda en otra pestaña.
 
 ## 🌏 *Github Page*
 Puedes ver el proyecto en acción <a href="https://lautaroayub.github.io/TO-DO-LIST--React-/">aquí</a>.
