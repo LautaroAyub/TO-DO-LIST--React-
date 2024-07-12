@@ -10,6 +10,7 @@ function App() {
     <HashRouter>
       <Routes>
         <Route path='/' element={<HomePage />} />
+        <Route path='/search/:slug?' element={<HomePage/>}/>
         <Route path='/new' element={<NewTodoPage />} />
         <Route path='/edit/:id' element={<EditTodoPage />} />
         <Route path='*' element={<p>Not Found</p>} />
